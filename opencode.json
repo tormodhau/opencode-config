@@ -1,0 +1,47 @@
+{
+    "$schema": "https://opencode.ai/config.json",
+    "provider": {
+        "nhn-provider": {
+            "name": "nhn openai compatible",
+            "npm": "@ai-sdk/openai-compatible",
+            "models": {
+                "nhn-coder": {
+                    "name": "nhn-coder"
+                },
+                "nhn-medium:latest": {
+                    "name": "nhn-medium"
+                },
+                "nhn-large:fast": {
+                    "name": "nhn-openai-oss-120b"
+                },
+                "nhn-embedding:bge-m3": {
+                    "name": "nhn-embedding-bge-m3"
+                },
+                "nhn-embedding:latest": {
+                    "name": "nhn-embedding-latest"
+                },
+                "nhn-embedding:snowflake": {
+                    "name": "nhn-embedding-snowflake"
+                },
+            },
+            "options": {
+                "baseURL": "https://chat.nhn.no/api/v1",
+            }
+        },
+        "lmstudio": {
+            "npm": "@ai-sdk/openai-compatible",
+            "name": "LM Studio (Local)",
+            "options": {
+                "baseURL": "http://localhost:1234/v1"
+            },
+            "models": {
+                "openai/gpt-oss-20b": {
+                    "name": "OpenAI GPT OSS 20b"
+                },
+                "nvidia/nemotron-3-nano": {
+                    "name": "Nemotron 3 nano"
+                }
+            }
+        }
+    },
+}
