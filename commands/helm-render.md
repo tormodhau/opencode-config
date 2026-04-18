@@ -1,19 +1,9 @@
 ---
 name: helm-render
-description: Create rendered.[env].yaml for each environment
-license: MIT
-compatibility: opencode
-  workflow: helm
+description: Render Helm templates for all environments to establish a diff baseline
+agent: helm-render
+subtask: true
 ---
 
-## What I do
-
-- Create a `/rendered` folder if it does not already exist in the current directory:
-
-    mkdir rendered
-
-- Create a `[env].yaml`-file into the `/rendered`-directory for each `values.[env].yaml` file in the directory with the following commands:
-
-    helm template . -f values.yaml -f values.dev.yaml > rendered/dev.yaml
-    helm template . -f values.yaml -f values.test.yaml > rendered/test.yaml
-    helm template . -f values.yaml -f values.prod.yaml > rendered/prod.yaml
+Run helm template for all environments and save output to rendered/.
+Report which files were created and flag any helm template errors.

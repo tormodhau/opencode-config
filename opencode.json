@@ -32,4 +32,50 @@
             }
         }
     },
+    "model": "qwen/qwen3-coder-next-fp8",
+    "agent": {
+        "build": {
+            "model": "qwen/qwen3-coder-next-fp8",
+            "temperature": 0.15,
+            "top_p": 0.95,
+            "maxSteps": 20,
+            "prompt": ".opencode/prompts/build-helm.md",
+            "permission": {
+                "bash": {
+                    "*": "ask",
+                    "helm template *": "allow",
+                    "helm lint *": "allow",
+                    "difft *": "allow",
+                    "diff *": "allow",
+                    "git diff *": "allow",
+                    "git show *": "allow",
+                    "git log *": "allow",
+                    "git add rendered/before-*": "allow",
+                    "mkdir rendered": "allow",
+                    "cat *": "allow"
+                }
+            },
+            "permission": {
+                "task": {
+                    "helm-exec": "allow",
+                    "helm-render": "allow",
+                    "helm-diff": "allow"
+                }
+            }
+        },
+        "plan": {
+            "model": "openai-oss/oss-120b",
+            "temperature": 0.0,
+            "maxSteps": 10,
+            "prompt": ".opencode/prompts/plan-helm.md",
+            "permission": {
+                "edit": {
+                    "*": "deny"
+                },
+                "bash": {
+                    "*": "deny"
+                }
+            }
+        }
+    }
 }
