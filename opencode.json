@@ -8,20 +8,8 @@
                 "nhn-coder": {
                     "name": "nhn-coder"
                 },
-                "nhn-medium:latest": {
-                    "name": "nhn-medium"
-                },
                 "nhn-large:fast": {
                     "name": "nhn-openai-oss-120b"
-                },
-                "nhn-embedding:bge-m3": {
-                    "name": "nhn-embedding-bge-m3"
-                },
-                "nhn-embedding:latest": {
-                    "name": "nhn-embedding-latest"
-                },
-                "nhn-embedding:snowflake": {
-                    "name": "nhn-embedding-snowflake"
                 },
             },
             "options": {
