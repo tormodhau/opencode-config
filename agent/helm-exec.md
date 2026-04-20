@@ -6,7 +6,7 @@ description: >
   applies the change, runs helm-diff, and reports back.
 mode: subagent
 hidden: true
-model: qwen/qwen3-coder-next-fp8
+model: nhn-provider/nhn-coder
 temperature: 0.15
 top_p: 0.95
 maxSteps: 15

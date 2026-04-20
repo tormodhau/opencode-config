@@ -1,6 +1,7 @@
 ---
 name: "Kubernetes and Helm refactoring"
 description: Kubernetes and Helm refactoring expert
+temperature: 0.0
 permission:
     bash:
         "git *": ask
