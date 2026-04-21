@@ -13,16 +13,27 @@ permission:
     "*": deny
     "rendered/*": allow
   bash:
-    "*": deny
+    "*": ask
     "helm template *": allow
-    "mkdir *": allow
+    "helm lint *": allow
+    "difft *": allow
+    "diff *": allow
+    "git diff *": allow
+    "git show *": allow
+    "git log *": allow
+    "git add rendered/*": allow
+    "mkdir rendered": allow
+    "cat *": allow
+    "grep *": allow
+    "head *": allow
+    "ls *": allow
 ---
 
 ## Instructions
 
 1. Run `mkdir -p rendered` in the root directory, and `rendered/dev`, `rendered/test` and `rendered/prod` if theses directories do not exist.
-2. For each `values.[env].yaml` file found in the [app] directory:
-   - Run: `helm template [path-to-app] -f values.yaml -f values.[env].yaml > rendered/[env]/[app].yaml`
+2. For each `values.[env].yaml` file found in the $1 directory:
+   - Run: `helm template $1 -f values.yaml -f values.[env].yaml > rendered/[env]/[app].yaml`
 3. Report which files were created and whether `helm template` returned any errors.
 4. Do not modify any other files.
 

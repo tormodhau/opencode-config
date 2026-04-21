@@ -6,16 +6,13 @@ description: >
   Load this when planning or executing Helm refactors.
 ---
 
-## When a value belongs in values.yaml vs values.[env].yaml
+## Code guidelines
 
-- `values.yaml`: default values shared across ALL environments (image repository, port, annotations)
-- `values.[env].yaml`: ONLY values that are different in that environment (replicas, resource limits, ingress host, env-specific secrets)
-- A value that is the same in all three env files should be moved to `values.yaml` and removed from all env files
-
-## When _helpers.tpl is justified
-
-- Justified: a label block, selector, or name template used in 4+ places
-- Not justified: a single-use helper, a helper that wraps a single value, a helper used only in one template
+1. values.[env].yaml should contain ONLY values that differ between environments
+2. values.yaml should be empty
+3. _helpers.tpl functions are only justified when they remove >3 instances of duplication
+4. Remove all Helm code that exists only for chart sharing
+5. templates should not use static default values
 
 ## Semantic vs cosmetic diff changes
 
@@ -34,9 +31,3 @@ Semantic (must ask user):
 - Added or removed Kubernetes resources
 - Changes to environment variables
 - Changes to securityContext, serviceAccount, RBAC
-
-## Chart sharing anti-patterns to remove
-
-- `alias:` dependencies used only to share templates between internal charts
-- `library:` charts with no external consumers
-- `requirements.yaml` / `dependencies:` entries that are only used by one chart in the monorepo

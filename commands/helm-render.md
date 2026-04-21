@@ -5,5 +5,5 @@ agent: helm-render
 subtask: true
 ---
 
-Run helm template for all environments and save output to rendered/.
+Run /helm-render $ARGUMENTS
 Report which files were created and flag any helm template errors.
