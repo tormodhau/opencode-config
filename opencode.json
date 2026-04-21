@@ -8,9 +8,6 @@
                 "nhn-coder": {
                     "name": "nhn-coder"
                 },
-                "nhn-large:fast": {
-                    "name": "nhn-openai-oss-120b"
-                },
             },
             "options": {
                 "baseURL": "https://chat.nhn.no/api/v1",
@@ -32,5 +29,5 @@
             }
         }
     },
-    "model": "qwen/qwen3-coder-next-fp8",
+    "model": "nhn-provider/nhn-coder",
 }
