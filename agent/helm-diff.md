@@ -21,16 +21,14 @@ permission:
 
 ## Instructions
 
-1. Find all `rendered/[env]/[working-directory].yaml` files.
-2. If none found, stop and report.
-3. For each [env], run:
-   - `helm template [working-directory] -f values.yaml -f values.[env].yaml | difft rendered/[env]/[working-directory].yaml -`
-   - If `difft` is unavailable: `helm template . -f values.yaml -f values.[env].yaml | difft rendered/[env]/[working-directory].yaml -`
-4. Save each diff to `rendered/[env].diff-[working-directory].txt`.
-5. Classify each diff: cosmetic only (whitespace, comments, ordering) vs semantic (value changes, added/removed resources, spec changes).
-6. Return a summary table:
+1. Run /helm-render
+2. Use git to diff what has changed from the previous commit
+3. Classify each diff:
+    a) cosmetic only (whitespace, comments, ordering) vs
+    b) semantic (value changes, added/removed resources, spec changes).
+4. Return a summary table:
 
-| Env | Diff file | Semantic changes? | Details |
+| Env | File Name Diffed | Semantic changes? | Details |
 |-----|-----------|-------------------|---------|
 
 If semantic changes are found, show the relevant diff lines.

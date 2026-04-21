@@ -5,5 +5,4 @@ agent: helm-render
 subtask: true
 ---
 
-Run /helm-render $ARGUMENTS
-Report which files were created and flag any helm template errors.
+Run the !`make render-templates` command from the Makefile

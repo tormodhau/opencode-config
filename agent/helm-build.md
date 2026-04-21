@@ -3,7 +3,7 @@ name: helm-build
 description: Executor for Kubernetes and Helm refactoring based on PLAN.md
 mode: primary
 model: nhn-provider/nhn-coder
-temperature: 0.0
+temperature: 0.1
 top_p: 0.95
 maxSteps: 20
 permission:
