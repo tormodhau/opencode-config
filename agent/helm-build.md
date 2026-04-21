@@ -22,6 +22,7 @@ permission:
   task:
     "helm-render": allow
     "helm-diff": allow
+    "helm-exec": allow
 ---
 
 

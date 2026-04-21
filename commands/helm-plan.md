@@ -3,7 +3,7 @@ name: helm-plan
 description: >
   Analyse the current Helm chart and produce a structured PLAN.md refactoring table.
   Uses the reasoning model. No files are modified (read-only analysis).
-agent: plan
+agent: helm-plan
 subtask: false
 ---
 
